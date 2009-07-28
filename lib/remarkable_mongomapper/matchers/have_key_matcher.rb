@@ -5,12 +5,20 @@ module Remarkable
         
         arguments :collection => :keys, :as => :key
         
+        optional :type
+        
+        default_options :type => nil
+        
         collection_assertions :has_key?
+        
+        before_assert do
+          @type = @options[:type]
+        end
 
         protected
 
           def has_key?
-            @subject.reader?(@key) && @subject.writer?(@key)
+            @subject.reader?(@key) && @subject.class.keys[@key] == ::MongoMapper::Key.new(@key, @type)
           end
 
       end
