@@ -7,6 +7,6 @@ en:
           has_key: "{{subject_name}} to have key named {{key}} with type {{type}}"
 
       validate_presence_of:
-        description: "require {{keys}} to be set"
+        description: "require {{attributes}} to be set"
         expectations:
-          allow_nil: "{{subject_name}} to require {{key}} to be set"
+          allow_nil: "{{subject_name}} to require {{attribute}} to be set"

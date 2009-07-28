@@ -3,15 +3,18 @@ module Remarkable
     module Matchers
       class ValidatePresenceOfMatcher < Remarkable::MongoMapper::Base #:nodoc:
         
-        arguments :collection => :keys, :as => :key
+        arguments :collection => :attributes, :as => :attribute
+        optional  :message
 
         collection_assertions :allow_nil?
+        default_options :message => "can't be empty"
 
         protected
 
           def allow_nil?
-            @subject.send("#{@key}=", nil)
-            !@subject.valid? && !@subject.errors.on(@key).blank?
+            bad?(nil, :message)
+            #@subject.send("#{@key}=", nil)
+            #!@subject.valid? && !@subject.errors.on(@key).blank?
           end
 
       end
