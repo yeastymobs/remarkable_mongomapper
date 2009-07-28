@@ -22,7 +22,17 @@ module Remarkable
           end
 
       end
-
+      
+      # Ensures that a key of the database actually exists.
+      #
+      # == Examples
+      #
+      #   should_have_column :name, :type => String
+      #
+      #   it { should have_column(:name, :type => String) }
+      #   it { should have_column(:name, :phone_number, :type => String) }
+      #   it { should have_column(:name).type(String) }
+      #
       def have_key(*args, &block)
         HaveKeyMatcher.new(*args, &block).spec(self)
       end

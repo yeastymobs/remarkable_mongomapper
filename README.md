@@ -1,0 +1,1 @@
+Remarkable matchers for [MongoMapper](http://github.com/jnunemaker/mongomapper).

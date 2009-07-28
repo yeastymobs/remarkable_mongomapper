@@ -15,7 +15,15 @@ module Remarkable
           end
 
       end
-
+      
+      # Ensures that the model cannot be saved if one of the attributes listed is not present.
+      #
+      #
+      # == Examples
+      #
+      #   should_validate_presence_of :name, :phone_number
+      #   it { should validate_presence_of(:name, :phone_number) }
+      #
       def validate_presence_of(*args, &block)
         ValidatePresenceOfMatcher.new(*args, &block).spec(self)
       end
