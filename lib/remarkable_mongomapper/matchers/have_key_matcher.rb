@@ -10,7 +10,7 @@ module Remarkable
         protected
 
           def has_key?
-            @subject.respond_to?(@key) && @subject.respond_to?("#{@key}=")
+            @subject.reader?(@key) && @subject.writer?(@key)
           end
 
       end

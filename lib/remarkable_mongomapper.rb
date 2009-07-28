@@ -17,5 +17,10 @@ Remarkable.add_locale File.join(dir, '..', 'locales', 'en.yml')
 Dir[File.join(dir, 'remarkable_mongomapper', 'matchers', '*.rb')].each do |file|
   require file
 end
- 
-Remarkable.include_matchers!(Remarkable::MongoMapper, Spec::Example::ExampleGroup)
+
+# Include Remarkable MongoMapper matcher in appropriate ExampleGroup
+if defined?(Spec::Rails)
+  Remarkable.include_matchers!(Remarkable::MongoMapper, Spec::Rails::Example::ModelExampleGroup)
+else
+  Remarkable.include_matchers!(Remarkable::MongoMapper, Spec::Example::ExampleGroup)
+end
