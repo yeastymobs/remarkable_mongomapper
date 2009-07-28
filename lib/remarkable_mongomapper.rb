@@ -12,6 +12,8 @@ end
 # Add locale
 dir = File.dirname(__FILE__)
 Remarkable.add_locale File.join(dir, '..', 'locales', 'en.yml')
+
+require File.join(dir, 'remarkable_mongomapper', 'base')
  
 # Add matchers
 Dir[File.join(dir, 'remarkable_mongomapper', 'matchers', '*.rb')].each do |file|

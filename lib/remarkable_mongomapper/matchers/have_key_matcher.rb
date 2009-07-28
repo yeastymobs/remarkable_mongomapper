@@ -1,7 +1,7 @@
 module Remarkable
   module MongoMapper
     module Matchers
-      class HaveKeyMatcher < Remarkable::Base #:nodoc:
+      class HaveKeyMatcher < Remarkable::MongoMapper::Base #:nodoc:
         
         arguments :collection => :keys, :as => :key
         
