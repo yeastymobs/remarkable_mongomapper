@@ -27,11 +27,11 @@ module Remarkable
       #
       # == Examples
       #
-      #   should_have_column :name, :type => String
+      #   should_have_key :name, :type => String
       #
-      #   it { should have_column(:name, :type => String) }
-      #   it { should have_column(:name, :phone_number, :type => String) }
-      #   it { should have_column(:name).type(String) }
+      #   it { should have_key(:name, :type => String) }
+      #   it { should have_keys(:name, :phone_number, :type => String) }
+      #   it { should have_key(:name).type(String) }
       #
       def have_key(*args, &block)
         HaveKeyMatcher.new(*args, &block).spec(self)
