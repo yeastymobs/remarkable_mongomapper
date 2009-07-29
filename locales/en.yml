@@ -1,6 +1,14 @@
 en:
   remarkable:
     mongo_mapper:
+      association:
+        many: have many
+        belongs_to: belong to
+        description: "{{type}} {{associations}}"
+        expectations:
+          association_exists: "{{subject_name}} records {{type}} {{association}}, but the association does not exist"
+          type_matches: "{{subject_name}} records {{type}} {{association}}, got {{subject_name}} records {{actual_type}} {{association}}"
+            
       have_key:
         description: "have key(s) {{attributes}}"
         expectations:
