@@ -3,7 +3,7 @@ module Remarkable
     module Matchers
       class HaveKeyMatcher < Remarkable::MongoMapper::Base #:nodoc:
         
-        arguments :collection => :keys, :as => :key
+        arguments :collection => :attributes, :as => :attribute
         
         optional :type
         
@@ -18,7 +18,7 @@ module Remarkable
         protected
 
           def has_key?
-            @subject.reader?(@key) && @subject.class.keys[@key] == ::MongoMapper::Key.new(@key, @type)
+            @subject.reader?(@attribute) && @subject.class.keys[@attribute] == ::MongoMapper::Key.new(@attribute, @type)
           end
 
       end

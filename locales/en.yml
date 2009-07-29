@@ -2,9 +2,9 @@ en:
   remarkable:
     mongo_mapper:
       have_key:
-        description: "have key(s) {{keys}}"
+        description: "have key(s) {{attributes}}"
         expectations:
-          has_key: "{{subject_name}} to have key named {{key}} with type {{type}}"
+          has_key: "{{subject_name}} to have key named {{attribute}} with type {{type}}"
 
       validate_presence_of:
         description: "require {{attributes}} to be set"
