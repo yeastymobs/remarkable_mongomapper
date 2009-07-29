@@ -18,7 +18,7 @@ module Remarkable
         protected
 
           def has_key?
-            @subject.reader?(@attribute) && @subject.class.keys[@attribute] == ::MongoMapper::Key.new(@attribute, @type)
+            @subject.respond_to?(@attribute) && @subject.class.keys[@attribute] == ::MongoMapper::Key.new(@attribute, @type)
           end
 
       end
