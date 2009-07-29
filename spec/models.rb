@@ -5,7 +5,12 @@ class Article
   key :body, String
   
   many :comments
+  many :unknowns
+  many :ratings, :class_name => "Rate"
+  many :assets
   belongs_to :user
+  belongs_to :unknown
+  belongs_to :site, :class_name => 'Site'
 end
 
 class Comment
@@ -18,4 +23,20 @@ class User
   include MongoMapper::Document
   
   key :login, String
+end
+
+class Rate
+  include MongoMapper::EmbeddedDocument
+end
+
+class Rating
+  include MongoMapper::EmbeddedDocument
+end
+
+class Site
+  include MongoMapper::EmbeddedDocument
+end
+
+class Webiste
+  include MongoMapper::EmbeddedDocument
 end

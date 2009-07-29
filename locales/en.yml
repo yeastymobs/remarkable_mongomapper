@@ -8,7 +8,9 @@ en:
         expectations:
           association_exists: "{{subject_name}} records {{type}} {{association}}, but the association does not exist"
           type_matches: "{{subject_name}} records {{type}} {{association}}, got {{subject_name}} records {{actual_type}} {{association}}"
-            
+          klass_exists: "{{subject_name}} records {{type}} {{association}}, but the association class does not exist"
+          options_match: "{{subject_name}} records {{type}} {{association}} with options {{options}}, got {{actual}}"
+          
       have_key:
         description: "have key(s) {{attributes}}"
         expectations:

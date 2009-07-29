@@ -18,11 +18,29 @@ describe 'association_matcher' do
         matcher.matches?(subject)
         matcher.failure_message.should == 'Expected Article records have many whatever, but the association does not exist'
       end
-      
+
       it 'should set type_matches? message' do
         matcher = belong_to(:comments)
         matcher.matches?(subject)
         matcher.failure_message.should == 'Expected Article records belong to comments, got Article records have many comments'
+      end
+      
+      it 'should set klass_exists? message' do
+        matcher = have_many(:unknowns)
+        matcher.matches?(subject)
+        matcher.failure_message.should == 'Expected Article records have many unknowns, but the association class does not exist'
+      end
+      
+      it 'should set options_matches? message when :class_name is given' do
+        matcher = have_many(:ratings, :class_name => 'Rating')
+        matcher.matches?(subject)
+        matcher.failure_message.should == 'Expected Article records have many ratings with options {:class_name=>"Rating"}, got {:class_name=>"Rate"}'
+      end
+      
+      it 'should set options_matches? message when :polymorphic is given' do
+        matcher = have_many(:assets, :polymorphic => true)
+        matcher.matches?(subject)
+        matcher.failure_message.should == 'Expected Article records have many assets with options {:polymorphic=>"true"}, got {:polymorphic=>""}'
       end
     end
     
@@ -56,6 +74,18 @@ describe 'association_matcher' do
         matcher = have_many(:user)
         matcher.matches?(subject)
         matcher.failure_message.should == 'Expected Article records have many user, got Article records belong to user'
+      end
+      
+      it 'should set klass_exists? message' do
+        matcher = belong_to(:unknown)
+        matcher.matches?(subject)
+        matcher.failure_message.should == 'Expected Article records belong to unknown, but the association class does not exist'
+      end
+      
+      it 'should set options_matches? message when :class_name is given' do
+        matcher = belong_to(:site, :class_name => 'Website')
+        matcher.matches?(subject)
+        matcher.failure_message.should == 'Expected Article records belong to site with options {:class_name=>"Website"}, got {:class_name=>"Site"}'
       end
     end
     
