@@ -1,6 +1,6 @@
 require "rubygems"
 
-gem "mongomapper", "~> 0.2.0"
+gem "mongomapper", "~> 0.3.1"
 require "mongomapper"
 
 MongoMapper.database = "remarkable_mongomapper"

@@ -104,7 +104,6 @@ module Remarkable
 
           return true if model.valid?
           
-          # FIXME
           error_message_to_avoid = error_message_from_model(model, attribute, error_message_to_avoid)
           assert_does_not_contain(model.errors.on(attribute), error_message_to_avoid)
         end
@@ -131,7 +130,6 @@ module Remarkable
 
           return false if model.valid? || model.errors.on(attribute).blank?
           
-          # FIXME
           error_message_to_expect = error_message_from_model(model, attribute, error_message_to_expect)
           assert_contains(model.errors.on(attribute), error_message_to_expect)
         end
