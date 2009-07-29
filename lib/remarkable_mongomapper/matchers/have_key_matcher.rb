@@ -3,17 +3,13 @@ module Remarkable
     module Matchers
       class HaveKeyMatcher < Remarkable::MongoMapper::Base
         
-        arguments :collection => :attributes, :as => :attribute
-        
-        optional :type
-        
-        default_options :type => nil
+        arguments :type, :collection => :attributes, :as => :attribute
         
         collection_assertions :has_key?
         
-        before_assert do
-          @type = @options[:type]
-        end
+        # before_assert do
+        #   @type = @options[:type]
+        # end
 
         protected
 
@@ -27,14 +23,13 @@ module Remarkable
       #
       # == Examples
       #
-      #   should_have_key :name, :type => String
+      #   should_have_key :name, String
       #
-      #   it { should have_key(:name, :type => String) }
-      #   it { should have_keys(:name, :phone_number, :type => String) }
-      #   it { should have_key(:name).type(String) }
+      #   it { should have_key(:name, String) }
+      #   it { should have_keys(:name, :phone_number, String) }
       #
       def have_key(*args, &block)
-        HaveKeyMatcher.new(*args, &block).spec(self)
+        HaveKeyMatcher.new(args.pop, *args, &block).spec(self)
       end
       alias :have_keys :have_key
 
