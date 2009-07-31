@@ -1,6 +1,26 @@
 en:
   remarkable:
     mongo_mapper:
+      describe:
+        each: "{{key}} is {{value}}"
+        prepend: "when "
+        connector: " and "
+      expectations:
+        allow_nil: "{{subject_name}} to {{not}}allow nil values for {{attribute}}"
+        allow_blank: "{{subject_name}} to {{not}}allow blank values for {{attribute}}"
+      optionals:
+        allow_nil:
+          positive: "allowing nil values"
+          negative: "not allowing nil values"
+        allow_blank:
+          positive: "allowing blank values"
+          negative: "not allowing blank values"
+      
+      allow_values_for:
+        description: "allow {{in}} as values for {{attributes}}"
+        expectations:
+          is_valid: "{{subject_name}} to be valid when {{attribute}} is set to {{value}}"
+          
       association:
         many: have many
         belongs_to: belong to
@@ -12,7 +32,7 @@ en:
           options_match: "{{subject_name}} records {{type}} {{association}} with options {{options}}, got {{actual}}"
           
       have_key:
-        description: "have key(s) {{attributes}}"
+        description: "have key(s) {{attributes}} with type {{type}}"
         expectations:
           has_key: "{{subject_name}} to have key named {{attribute}} with type {{type}}"
 

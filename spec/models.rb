@@ -34,7 +34,9 @@ class Rating
 end
 
 class Site
-  include MongoMapper::EmbeddedDocument
+  include MongoMapper::Document
+  
+  key :title, String, :format => /X|Y|Z/
 end
 
 class Webiste
