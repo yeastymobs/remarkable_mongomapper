@@ -35,6 +35,12 @@ en:
         description: "have key(s) {{attributes}} with type {{type}}"
         expectations:
           has_key: "{{subject_name}} to have key named {{attribute}} with type {{type}}"
+          
+      validate_confirmation_of:
+        description: "require {{attributes}} to be confirmed"
+        expectations:
+          responds_to_confirmation: "{{subject_name}} instance responds to {{attribute}}_confirmation"
+          confirms: "{{subject_name}} to be valid only when {{attribute}} is confirmed"
 
       validate_presence_of:
         description: "require {{attributes}} to be set"
