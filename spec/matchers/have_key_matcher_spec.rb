@@ -9,7 +9,7 @@ describe 'have_key' do
 
     it 'should contain a description' do
       matcher = have_key(:title, String)
-      matcher.description.should == 'have key(s) title'
+      matcher.description.should == 'have key(s) title with type String'
     end
 
     it 'should set has_key? message' do

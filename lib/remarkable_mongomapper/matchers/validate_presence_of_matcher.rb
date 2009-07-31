@@ -2,7 +2,6 @@ module Remarkable
   module MongoMapper
     module Matchers
       class ValidatePresenceOfMatcher < Remarkable::MongoMapper::Base
-        
         arguments :collection => :attributes, :as => :attribute
         optional  :message
 
@@ -19,6 +18,10 @@ module Remarkable
       
       # Ensures that the model cannot be saved if one of the attributes listed is not present.
       #
+      # == Options
+      #
+      # * <tt>:message</tt> - value the test expects to find in <tt>errors.on(:attribute)</tt>.
+      #   Regexp, string or symbol. Default = "can't be empty"
       #
       # == Examples
       #
