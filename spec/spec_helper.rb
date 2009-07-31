@@ -16,3 +16,4 @@ end
 
 require File.join(File.dirname(__FILE__), "..", "lib", "remarkable_mongomapper")
 require File.join(File.dirname(__FILE__), "models")
+require File.join(File.dirname(__FILE__), "model_builder")
