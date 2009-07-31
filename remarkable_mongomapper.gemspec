@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{remarkable_mongomapper}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicolas M\303\251rouze", "Vincent Hellot", "Mathieu Fosse"]
-  s.date = %q{2009-07-29}
+  s.date = %q{2009-07-31}
   s.email = %q{dev@yeastymobs.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -20,14 +20,19 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/remarkable_mongomapper.rb",
      "lib/remarkable_mongomapper/base.rb",
+     "lib/remarkable_mongomapper/describe.rb",
+     "lib/remarkable_mongomapper/human_names.rb",
+     "lib/remarkable_mongomapper/matchers/allow_values_for_matcher.rb",
      "lib/remarkable_mongomapper/matchers/association_matcher.rb",
      "lib/remarkable_mongomapper/matchers/have_key_matcher.rb",
      "lib/remarkable_mongomapper/matchers/validate_presence_of_matcher.rb",
      "locales/en.yml",
      "remarkable_mongomapper.gemspec",
+     "spec/matchers/allow_values_for_matcher_spec.rb",
      "spec/matchers/association_matcher_spec.rb",
      "spec/matchers/have_key_matcher_spec.rb",
      "spec/matchers/validate_presence_of_matcher_spec.rb",
+     "spec/model_builder.rb",
      "spec/models.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
@@ -38,9 +43,11 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{MongoMapper Remarkable Matchers}
   s.test_files = [
-    "spec/matchers/association_matcher_spec.rb",
+    "spec/matchers/allow_values_for_matcher_spec.rb",
+     "spec/matchers/association_matcher_spec.rb",
      "spec/matchers/have_key_matcher_spec.rb",
      "spec/matchers/validate_presence_of_matcher_spec.rb",
+     "spec/model_builder.rb",
      "spec/models.rb",
      "spec/spec_helper.rb"
   ]
