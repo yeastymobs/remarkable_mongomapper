@@ -1,3 +1,7 @@
+# WARNING
+
+The official repo has been moved to "http://github.com/nmerouze/remarkable_mongo":http://github.com/nmerouze/remarkable_mongo
+
 # Remarkable MongoMapper
 
 Remarkable matchers for [MongoMapper](http://github.com/jnunemaker/mongomapper).
